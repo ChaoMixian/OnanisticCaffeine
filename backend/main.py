@@ -1,10 +1,11 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def hello():
-    return 'Test'
+    return render_template('index.html')
 
 @app.route('/api', methods=['GET', 'POST'])
 def api():
